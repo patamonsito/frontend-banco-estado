@@ -43,7 +43,7 @@ export class ClienteService {
     const body = {
       id
     }
-    return this.http.post(`${this.URL}/destinatarios/eliminar`, body)
+    return this.http.delete(`${this.URL}/destinatarios/eliminar`, body)
   }
 
   obtenerBancos(): Observable<any> {
