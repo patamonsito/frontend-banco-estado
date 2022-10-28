@@ -1,0 +1,46 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.main-container{
+  margin: auto;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 940px) {
+  .hide-mobile {
+      display: none !important;
+  }
+}
+
+
+@media only screen and (min-width: 940px) {
+  .hide-pc {
+      display: none !important;
+  }
+}
+
+@media (min-width: 1200px){    
+  .toolbar{
+    padding: 2rem;
+  }
+  .main-container {
+    width: 85%;
+    padding: 2rem 0rem;
+    max-width: 90pc;
+    margin: 0 auto;
+  }
+}
+
+.mat-toolbar.mat-primary{
+  background: linear-gradient(70deg,#ff9100,#e83420) !important;
+}
+
+a:hover{
+  color: white !important;
+}
+
+.link-nav:hover{
+  color: black !important;
+}

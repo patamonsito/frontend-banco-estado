@@ -1,0 +1,20 @@
+.tracks-page {
+    padding: 1rem;
+}
+
+thead{
+    background: linear-gradient(70deg,#ff9100,#e83420);
+    color: white;
+    font-size: 0.9rem;
+}
+
+td{
+    color: gray;
+    font-size: 0.8rem;
+}
+
+label{
+    font-weight: bold !important;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}

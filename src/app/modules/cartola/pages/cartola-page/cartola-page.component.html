@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="titulo">Historial de Transferencias</h2>
+        <hr>
+    </div>
+</div>
+
+<div class="row mt-1 mb-4">
+    <div class="col-md-6">
+        <label for="buscador">Filtro:</label>
+        <input type="text" name="buscador" class="form-control" placeholder="Buscar por Nombre, RUT o Correo" (keyup)="filterTransferencias($event)">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col" style="text-align: center;">Fecha</th>
+                <th scope="col" style="text-align: center;">Nº Operacion</th>
+                <th scope="col" style="text-align: center;">Destinatario</th>
+                <th scope="col">Banco/Producto Origen</th>
+                <th scope="col">Banco/Producto Destino</th>
+                <th scope="col" style="text-align: center;">Email</th>
+                <th scope="col" style="text-align: center;">Rut Beneficiario</th>
+                <th scope="col" style="text-align: center;">Monto</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let transferencia of transferencias">
+              <tr>
+                <td scope="row" style="text-align: center;">{{transferencia.createdAt | date: 'dd/M/yyyy' }}</td>
+                <td style="text-align: center;">{{ transferencia.numeroOperacion }}</td>
+                <td style="text-align: center;">{{ transferencia.nombre }}</td>
+                <td>Banco Estado<br>{{ cliente.cuentas[0].tipo + ' ' + cliente.cuentas[0].numero }}</td>
+                <td>{{ transferencia.bancoDestino }}<br>{{ transferencia.tipoCuentaDestino + ' ' + transferencia.numeroCuentaDestino }}</td>
+                <td style="text-align: center;">{{ transferencia.email }}</td>
+                <td style="text-align: center;">{{ transferencia.rut }}</td>
+                <td style="text-align: center;">{{ transferencia.monto | currency: 'CLP' : 'symbol-narrow' }}</td>
+              </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

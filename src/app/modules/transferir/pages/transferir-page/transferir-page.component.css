@@ -1,0 +1,159 @@
+.tracks-page {
+    padding: 1rem;
+}
+
+*{
+    font-family: 'Nunito Sans', sans-serif !important;
+}
+
+.opcion-destinatarios{
+    margin: auto;
+}
+
+.opcion-destinatarios:hover{
+    background-color: #f7f7f7;
+    cursor: pointer;
+}
+
+
+.contenedor::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.contenedor::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.contenedor::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.contenedor::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.contenedor::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.contenedor::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.titulo{
+    font-weight: bold;
+}
+
+.small-gray{
+    font-size: 0.8rem;
+    color: gray;
+}
+
+.sub-title-1, .sub-title-2, .sub-title{
+    color: #3e50b4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.sub-title-1::before, .sub-title-2::before {
+    background-color: #3e50b4;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    border-radius: 100%;
+    font-size: 0.7rem;
+    margin-right: 0.4rem;
+}
+
+.sub-title-1::before {
+    content: '1';
+}
+
+.sub-title-2::before {
+    content: '2';
+}
+
+.btn-custom, .btn-custom-red, .btn-custom-orange{
+    color: white;
+    border-radius: 1rem;
+    padding: 0.2rem 0.8rem;
+    margin: 0.5rem 0; 
+    float: right;
+    font-weight: 600;
+}
+
+.btn-custom{
+    background-color: #3e50b4;
+    border: 1px solid #3e50b4;
+}
+
+.btn-custom:active{
+    background-color: #5465c4;
+}
+
+
+.btn-custom-red{
+    background-color: rgb(210, 35, 35);
+    border: 1px solid rgb(210, 35, 35);
+}
+
+.btn-custom-red:active{
+    background-color: rgb(226, 60, 60);
+}
+
+
+.btn-custom-orange{
+    background-color: #ef5315;
+    border: 1px solid #ef5315;
+}
+
+.btn-custom-orange:active{
+    background-color: #f6652c;
+}
+
+
+.separador{
+    display: block;
+    width: 100%;
+    background-color: lightgray;
+    height: 0.1rem;
+    margin: 0.5rem 0;
+}
+
+.nombre-destinatario{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.info-destinatario{
+    color: gray;
+    font-size: 0.7rem;
+}
+
+.card{
+    padding: 0.3rem 0.6rem;
+}
+
+
+label{
+    font-weight: bold !important;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.form-control:focus{
+    border: solid 1px #ff9100 !important;
+    box-shadow: none;
+}
+
+.text-invalid{
+    color: red;
+    font-size: 0.8rem;
+}
+
+.btn-group{
+    width: 100%;
+    place-content: center;
+}

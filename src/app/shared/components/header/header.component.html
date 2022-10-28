@@ -1,0 +1,38 @@
+<div class="responsive">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row class="toolbar">
+      <button mat-icon-button (click)="sidenav.toggle()" class="hide-pc">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img aria-hidden="true" class="logo" src="	https://nwm.bancoestado.cl/content/dam/bancoestado/bancologo.png
+      " alt="Logo banco estado chile" width="200rem">
+      <span class="menu-spacer"></span>
+      <div fxShow="true" class="hide-mobile">
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+
+        <a mat-button [routerLink]="item.router" [queryParams]="item.query" *ngFor="let item of mainMenu.defaultOptions">
+
+              <i [ngClass]="['uil',item.icon]"></i>
+              <span class="side-bar__list list-label">{{item.name}}</span>
+      </a>
+      <a mat-button>
+        <span class="side-bar__list list-label" (click)="cerrarSesion()">Salir</span>
+      </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a class="link-nav" href="/inicio" mat-list-item>Home</a>
+        <a class="link-nav" href="/transferir" mat-list-item>Transferir</a>
+        <a class="link-nav" href="/cartola" mat-list-item>Catola</a>
+        <a class="link-nav" href="javascript:void(0)" mat-list-item (click)="cerrarSesion()">Salir</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="main-container" fxFlexFill>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

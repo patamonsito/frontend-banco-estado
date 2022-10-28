@@ -1,0 +1,57 @@
+
+
+<div class="row">
+      <div class="col-md-12">
+            <h3><strong>Bienvenido {{ cliente.nombre }}</strong></h3>
+      </div>
+      <hr>
+</div>
+
+
+<div class="row">
+    <div class="col-md-3" *ngFor="let cuenta of cliente.cuentas">
+      <div class="card">
+            <div class="card-body">
+                  <span><strong>{{ cuenta.tipo}}</strong></span><br>
+                  <span> Nº {{ cuenta.numero }}</span><br>
+                  <span class="mt-3 text-secondary">Saldo Disponible</span>
+                  <h1><strong>{{ cuenta.saldo | currency: 'CLP' : 'symbol-narrow'}}</strong></h1>
+                  <hr>
+                  <a href="/cartola">Ver movimientos</a>
+            </div>
+      </div>
+    </div>
+ </div>
+
+ <hr>
+
+ <div class="row">
+       <div class="col-md-12">
+            <h4>Ultimos Movimientos</h4>
+      </div>
+      <div class="col-md-12">
+            <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" style="text-align: center;">Fecha</th>
+                      <th scope="col" style="text-align: center;">Nº Operacion</th>
+                      <th scope="col">Banco/Producto Origen</th>
+                      <th scope="col" style="text-align: center;">Rut Beneficiario</th>
+                      <th scope="col" style="text-align: center;">Monto</th>
+                    </tr>
+                  </thead>
+                  <tbody *ngFor="let transferencia of cliente.transferencias">
+                    <tr>
+                      <td scope="row" style="text-align: center;">{{transferencia.createdAt | date: 'dd/M/yyyy' }}</td>
+                      <td style="text-align: center;">{{ transferencia.numeroOperacion }}</td>
+                      <td >Banco Estado {{ cliente.cuentas[0].tipo + ' ' + cliente.cuentas[0].numero }}</td>
+                      <td style="text-align: center;">{{ transferencia.rut }}</td>
+                      <td style="text-align: center;">{{ transferencia.monto | currency: 'CLP' : 'symbol-narrow' }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+      </div>
+</div>
+
+
+
